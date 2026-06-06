@@ -29,3 +29,11 @@ ehPrimo x
     |x <= 0 = False
     |somaDivisores x == 1 = True
     |otherwise = False
+
+--questão 3
+fatorial :: Int -> Int
+fatorial x
+    |x == 0 || x == 1 = 1
+    |x >1 = x*fatorial((x-1))
+
+--questão 4
