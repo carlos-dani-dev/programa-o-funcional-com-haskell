@@ -1,0 +1,1 @@
+-- respostas às questões em [haskell-lists.txt]
