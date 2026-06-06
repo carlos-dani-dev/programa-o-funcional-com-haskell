@@ -24,3 +24,8 @@ ehPerfeito x
     |otherwise = False
 
 --questão 2
+ehPrimo :: Int -> Bool
+ehPrimo x
+    |x <= 0 = False
+    |somaDivisores x == 1 = True
+    |otherwise = False
