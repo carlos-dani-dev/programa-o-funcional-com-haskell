@@ -1,8 +1,8 @@
 -- respostas às questões em [exercício de ZF.txt]
 
 --questão 1
-teste_q1 :: [Int]
-teste_q1 = [1, -1, 0]
+teste_q1 :: [Float]
+teste_q1 = [7, -1, 0]
 
 verifica :: Int -> String
 verifica a
@@ -17,4 +17,10 @@ q1 lista = [(a, verifica(a)) | a <- lista]
 paresOrd :: [Int] -> [(Int, Int)]
 paresOrd lista = [(a, b) | a <- lista, b <- lista, b /= a]
 
-    
+--questão 3
+mediaLista :: [Float] -> Float
+mediaLista lista = sum lista / fromIntegral (length lista)
+
+distMedia :: [Float] -> [(Float,Float)]
+distMedia lista = [(a, abs(a-mediaLista lista)) | a <- lista]
+
