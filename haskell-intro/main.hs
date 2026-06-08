@@ -94,4 +94,10 @@ mdc m n
     |m > n = mdcAux (divisores m) (divisores n)
 --    |m < n = mdcAux (divisores n) (divisores m)
 
+mdcFBAux :: Int -> Int -> Int -> Int
+mdcFBAux m n teste
+    |resto m teste == 0 && resto n teste == 0 = teste
+    |otherwise = mdcFBAux m n (teste-1)
+
 mdcFB :: Int -> Int -> Int
+mdcFB m n = mdcFBAux m n (min m n)
