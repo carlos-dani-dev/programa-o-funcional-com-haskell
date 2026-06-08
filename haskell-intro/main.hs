@@ -60,3 +60,14 @@ resto :: Int -> Int -> Int
 resto m n
     |m>=n = resto (m-n) n
     |m<n = m
+
+--questão 7
+divInteiraAux :: Int -> Int -> Int -> Int
+divInteiraAux m n contador
+    |m >= n = divInteiraAux (m-n) n (contador+1)
+    |m < n = contador
+
+divInteira :: Int -> Int -> Int
+divInteira m n
+    |m < n = 0
+    |otherwise = divInteiraAux (m-n) n 1
