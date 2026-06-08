@@ -71,3 +71,27 @@ divInteira :: Int -> Int -> Int
 divInteira m n
     |m < n = 0
     |otherwise = divInteiraAux (m-n) n 1
+
+--questão 8
+pertence :: Int -> [Int] -> Bool
+pertence b [] = False
+pertence m (a:b)
+    |m == a = True
+    |otherwise = pertence m b
+
+mdcAux :: [Int] -> [Int] -> Int
+mdcAux (a:b) (c:d)
+    |pertence (last (a:b)) (c:d) = last (a:b)
+    |otherwise = mdcAux (take ( (length (a:b))-1 ) (a:b)) (c:d)
+--( last ( take ( (length (a:b))-1 ) (a:b) ) ) d = last (a:b)
+
+mdc :: Int -> Int -> Int
+mdc m n
+    |m==n = m
+    |(resto m n == 0 || resto n m == 0) && m >= n = n
+    |(resto m n == 0 || resto n m == 0) && n > m = m
+    |m == 0 || n == 0 = 0
+    |m > n = mdcAux (divisores m) (divisores n)
+--    |m < n = mdcAux (divisores n) (divisores m)
+
+mdcFB :: Int -> Int -> Int
