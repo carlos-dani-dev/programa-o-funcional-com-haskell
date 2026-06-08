@@ -37,3 +37,26 @@ fatorial x
     |x >1 = x*fatorial((x-1))
 
 --questão 4
+q4Aux :: Int -> Int -> Int -> Int
+q4Aux m n contador
+    |(m+contador) <= n = (m+contador) * q4Aux m n (contador+1)
+    |otherwise = 1
+
+q4 :: Int -> Int -> Int
+q4 m n
+    |m>n = 0
+    |m==n = m*n
+    |otherwise = q4Aux m n 0
+
+--questão 5
+fib :: Int -> Int
+fib m
+    |m == 1 = 0
+    |m == 2 = 1
+    |m > 2 = fib (m-1) + fib (m-2)
+
+--questão 6
+resto :: Int -> Int -> Int
+resto m n
+    |m>=n = resto (m-n) n
+    |m<n = m
