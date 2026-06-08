@@ -2,7 +2,7 @@
 
 --questão 1
 teste_q1 :: [Int]
-teste_q1 = [1, 2, -1, -10, 0, 0, 1]
+teste_q1 = [1, -1, 0]
 
 verifica :: Int -> String
 verifica a
@@ -14,3 +14,7 @@ q1 :: [Int] -> [(Int, String)]
 q1 lista = [(a, verifica(a)) | a <- lista]
 
 --questão 2
+paresOrd :: [Int] -> [(Int, Int)]
+paresOrd lista = [(a, b) | a <- lista, b <- lista, b /= a]
+
+    
